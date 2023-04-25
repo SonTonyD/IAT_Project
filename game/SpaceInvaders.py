@@ -19,9 +19,13 @@ def getURL(filename):
 
 class SpaceInvaders():
 
-    NO_INVADERS = 1 # Nombre d'aliens  
+    NO_INVADERS = 5 # Nombre d'aliens  
     
     def __init__(self, display : bool = False):
+
+        #Rajout pour qagent (calcul de la direction deplacement enemi)
+        self.oldPos = 0
+
         # player
         self.display = display
         
@@ -82,11 +86,24 @@ class SpaceInvaders():
         return pygame.surfarray.array3d(self.screen)
 
     def get_state(self):
-        """ A COMPLETER AVEC VOTRE ETAT
-        Cette méthode doit renvoyer l'état du système comme vous aurez choisi de
-        le représenter. Vous pouvez utiliser les accesseurs ci-dessus pour cela. 
-        """
-        return "L'état n'est pas implémenté (SpaceInvaders.get_state)"
+
+        retX = 0
+        retY = 0
+
+        temp = self.get_indavers_Y()
+
+        y = max(temp)
+        ind = temp.index(y)
+        retY = int(y / 50)
+
+        x = self.get_indavers_X()
+        retX = int(x[ind]/100)
+        
+        if self.oldPos - x[ind] > 0 : direction = -1
+        else: direction = 1
+
+        self.oldPos = x[ind]
+        return (retX, retY, direction)
 
     def reset(self):
         """Reset the game at the initial state.
@@ -184,6 +201,9 @@ class SpaceInvaders():
                 self.invader_X[i] = random.randint(64, 736)
                 self.invader_Y[i] = random.randint(30, 200)
                 self.invader_Xchange[i] *= -1
+
+            if self.bullet_Y < 30:
+                reward = -1
     
             self.move_invader(self.invader_X[i], self.invader_Y[i], i)
     
