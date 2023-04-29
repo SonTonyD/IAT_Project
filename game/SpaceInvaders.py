@@ -23,9 +23,6 @@ class SpaceInvaders():
     
     def __init__(self, display : bool = False):
 
-        self.nx = 160 
-        self.ny = 120
-        self.nf = 2
 
         #Rajout pour qagent (calcul de la direction deplacement enemi)
         self.oldPos = 0
@@ -206,9 +203,6 @@ class SpaceInvaders():
                 self.invader_X[i] = random.randint(64, 736)
                 self.invader_Y[i] = random.randint(30, 200)
                 self.invader_Xchange[i] *= -1
-
-            if self.bullet_Y < 30:
-                reward = -1
     
             self.move_invader(self.invader_X[i], self.invader_Y[i], i)
     

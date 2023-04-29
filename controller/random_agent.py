@@ -50,6 +50,12 @@ class RandomAgent():
         next_q = reward + self.gamma * max(self.Q[next_state])
         self.Q[state][action] = current_q + self.alpha * (next_q - current_q) 
 
+    def saveQ(self, filename) :
+        np.save(filename, self.Q)
+
+    def loadQ(self, filename):
+        self.Q = np.load(filename)
+
 
     def select_action(self, state):
         if np.random.random() < self.epsilon:
