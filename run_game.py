@@ -8,7 +8,14 @@ def main():
     game = SpaceInvaders(display=True)
     #controller = KeyboardController()
 
-    controller = RandomAgent(8, 12, 2, game.na, game)
+    gamma = 0.8
+    alpha = 0.1
+    n_episodes = 10
+    max_iter = 5000
+    epsilon = 0.9
+
+
+    controller = RandomAgent(160, 120, 2, game.na, game, gamma, alpha, n_episodes, max_iter, epsilon)
     controller.learn()
  
     state = game.reset()

@@ -2,18 +2,25 @@ import numpy as np
 
 class RandomAgent():
 
-    def __init__(self, nx, ny, nd, num_actions, game):
+    def __init__(self, nx, ny, nd, num_actions, game, gamma, alpha, n_episodes, max_iter, epsilon):
 
         self.num_actions = num_actions
         self.game = game
 
         self.Q = np.zeros([nx, ny, nd, num_actions])
 
-        self.gamma = 0.8
-        self.alpha = 0.1
-        self.n_episodes = 500
-        self.max_iter = 50000
-        self.epsilon = 0.9
+        # self.gamma = 0.8
+        # self.alpha = 0.1
+        # self.n_episodes = 500
+        # self.max_iter = 50000
+        # self.epsilon = 0.9
+
+        self.gamma = gamma
+        self.alpha = alpha
+        self.n_episodes = n_episodes
+        self.max_iter = max_iter
+        self.epsilon = epsilon
+
 
     def learn(self):
 

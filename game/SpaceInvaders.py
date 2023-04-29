@@ -23,6 +23,10 @@ class SpaceInvaders():
     
     def __init__(self, display : bool = False):
 
+        self.nx = 160 
+        self.ny = 120
+        self.nf = 2
+
         #Rajout pour qagent (calcul de la direction deplacement enemi)
         self.oldPos = 0
 
@@ -104,6 +108,7 @@ class SpaceInvaders():
 
         self.oldPos = x[ind]
         return (retX, retY, direction)
+
 
     def reset(self):
         """Reset the game at the initial state.
