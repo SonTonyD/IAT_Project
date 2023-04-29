@@ -104,6 +104,17 @@ class SpaceInvaders():
         else: direction = 1
 
         self.oldPos = x[ind]
+
+        if retX < 0:
+            retX = 0
+        elif retX > 800:
+            retX = 800
+
+        if retY < 0:
+            retY = 0
+        elif retY > 600:
+            retY = 600
+
         return (retX, retY, direction)
 
 

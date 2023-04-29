@@ -1,4 +1,5 @@
 import numpy as np
+import csv
 
 class RandomAgent():
 
@@ -62,3 +63,8 @@ class RandomAgent():
             return np.random.choice(self.num_actions)
         else:
             return np.argmax(self.Q[state][:])
+        
+    def append_to_csv(self, filename, row):
+        with open(filename, mode='a', newline='') as csvfile:
+            csvwriter = csv.writer(csvfile)
+            csvwriter.writerow(row)

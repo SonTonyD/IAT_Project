@@ -1,0 +1,2 @@
+False 0.8 0.1 5 8000 0.9 Q_table_4.npy train
+
