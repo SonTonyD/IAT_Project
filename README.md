@@ -7,7 +7,7 @@ Dans ce projet, la méthode Q-learning a été choisie pour l'apprentissage par 
 ## Installation
 1. Récupérer le projet
 ```bash
-git clone https://github.com/aurelienDelageInsaLyon/IAT-projet
+git clone https://github.com/SonTonyD/IAT_Project.git
 cd IAT-projet
 ```
 
