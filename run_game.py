@@ -73,7 +73,7 @@ def main(display, gamma, alpha, n_episodes, max_iter, epsilon, model_name, mode)
     n_episodes = int(n_episodes)
     max_iter = int(max_iter)
     epsilon = float(epsilon)
-    model_name = str("Q_table_0.npy")
+    model_name = str(model_name)
     mode = str(mode)
 
 

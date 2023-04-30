@@ -29,6 +29,7 @@ class RandomAgent():
 
             self.game.reset()
             state = self.game.get_state()
+            print("Episode : ", e)
 
             count = 0
             while count < self.max_iter:

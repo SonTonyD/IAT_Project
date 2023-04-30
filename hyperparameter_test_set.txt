@@ -1,2 +1,2 @@
-False 0.8 0.1 5 8000 0.9 Q_table_4.npy train
+True 0.8 0.01 80 4000 0.9 super_agent_0.8_0.01_40_3000_0.9.npy sim
 
