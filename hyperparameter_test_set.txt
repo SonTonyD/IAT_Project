@@ -1,5 +1,4 @@
-True 0.8 1.0 100 4000 0.9 super_agent_0.8_1_100_4000_0.9.npy train
-True 0.8 1.0 2000 1000 0.9 super_agent_0.8_1_2000_1000_0.9.npy train
-True 0.8 0.5 2000 1000 0.9 super_agent_0.8_0.5_2000_1000_0.9.npy train
+True 0.8 0.07 20 8000 0.9 super_agent_0.8_0.07_20_8000_0.9.npy sim
+
 
 

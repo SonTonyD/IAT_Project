@@ -56,11 +56,12 @@ def simulation(controller, model_name, game):
     controller.loadQ(model_name)
     state = game.reset()
     while True:
-        try:
-            action = controller.select_action(state)
-            state, reward, is_done = game.step(action)
-            sleep(0.0001)
-        except IndexError:
+        
+        action = controller.select_action(state)
+        state, reward, is_done = game.step(action)
+        sleep(0.0001)
+
+        if is_done:
             print(game.score_val)
             controller.append_to_csv("results.csv", [model_name, gamma, alpha, n_episodes, max_iter, epsilon, game.score_val])
             quit()

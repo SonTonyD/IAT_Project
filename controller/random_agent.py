@@ -50,6 +50,7 @@ class RandomAgent():
                 count += 1
             
             print("Episode : ", e, "Reward: ", reward_sum)
+            self.append_to_csv("plot_episode_rewards.csv", [e, reward_sum, self.Q[state][action]])
 
             self.epsilon = max(self.epsilon - 1 / (self.n_episodes - 1.), 0)
 
