@@ -24,12 +24,13 @@ class RandomAgent():
 
 
     def learn(self):
+        
 
         for e in range(self.n_episodes):
-
+            reward_sum = 0
             self.game.reset()
             state = self.game.get_state()
-            print("Episode : ", e)
+            
 
             count = 0
             while count < self.max_iter:
@@ -37,13 +38,18 @@ class RandomAgent():
                 action = self.select_action(state)
 
                 next_state, reward, done = self.game.step(action)
+
+                reward_sum += reward
+
                 if done:
                     break
-
-                self.updateQ(state, action, reward, next_state)
+                
+                self.updateQ(state, action, reward_sum, next_state)
 
                 state = next_state
                 count += 1
+            
+            print("Episode : ", e, "Reward: ", reward_sum)
 
             self.epsilon = max(self.epsilon - 1 / (self.n_episodes - 1.), 0)
 

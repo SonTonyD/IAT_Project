@@ -106,14 +106,14 @@ class SpaceInvaders():
         self.oldPos = x[ind]
 
         if retX < 0:
-            retX = 0
+            retX = 1
         elif retX > 800:
-            retX = 800
+            retX = 799
 
         if retY < 0:
-            retY = 0
+            retY = 1
         elif retY > 600:
-            retY = 600
+            retY = 599
 
         return (retX, retY, direction)
 
@@ -207,6 +207,8 @@ class SpaceInvaders():
             # Collision
             collision = self.isCollision(self.bullet_X, self.invader_X[i], self.bullet_Y, self.invader_Y[i])
             if collision:
+                # reward = (1 * (1-self.invader_Y[i]) + 600 ) / 600
+                print("Collision")
                 reward = 1
                 self.score_val += 1
                 self.bullet_Y = 600
@@ -227,6 +229,7 @@ class SpaceInvaders():
 
         if self.display:
             self.render()
+        
     
         return self.get_state(), reward, is_done
 

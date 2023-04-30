@@ -77,7 +77,7 @@ def main(display, gamma, alpha, n_episodes, max_iter, epsilon, model_name, mode)
     mode = str(mode)
 
 
-    controller = RandomAgent(8, 12, 2, game.na, game, gamma, alpha, n_episodes, max_iter, epsilon)    
+    controller = RandomAgent(80, 120, 20, game.na, game, gamma, alpha, n_episodes, max_iter, epsilon)    
     if mode == "train":
         print("TRAINING AGENT")
         train(controller, model_name)
